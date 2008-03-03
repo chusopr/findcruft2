@@ -1,0 +1,4 @@
+cruftdir /etc/nullmailer
+cruftdir /var/log/nullmailer
+echo /var/nullmailer/trigger
+svcdir /var/nullmailer/service

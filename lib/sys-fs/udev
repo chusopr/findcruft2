@@ -1,0 +1,5 @@
+cruftdir /lib/udev-state
+echo /etc/blkid.tab
+echo /etc/blkid.tab.old
+echo /etc/udev/rules.d/70-persistent-cd.rules
+echo /etc/udev/rules.d/70-persistent-net.rules

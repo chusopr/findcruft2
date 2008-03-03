@@ -1,0 +1,6 @@
+echo /usr/bin/ex
+echo /usr/bin/vi
+echo /usr/bin/view
+echo /usr/share/man/man1/ex.1*
+echo /usr/share/man/man1/vi.1*
+echo /usr/share/man/man1/view.1*

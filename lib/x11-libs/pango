@@ -1,0 +1,2 @@
+echo /etc/pango/pango.modules
+cruftfile "/etc/pango/.*-.*-.*-.*/pango.modules"

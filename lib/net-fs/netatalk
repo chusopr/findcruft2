@@ -1,0 +1,2 @@
+echo /etc/avahi/services/afpd.service
+echo /var/run/afpd.pid

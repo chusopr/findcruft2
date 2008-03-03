@@ -1,0 +1,6 @@
+cruftfile "/usr/lib/ccache/bin/.*-.*-.*-.*-c++"
+cruftfile "/usr/lib/ccache/bin/.*-.*-.*-.*-g++"
+cruftfile "/usr/lib/ccache/bin/.*-.*-.*-.*-gcc"
+echo /usr/lib/ccache/bin/c++
+echo /usr/lib/ccache/bin/g++
+echo /usr/lib/ccache/bin/gcc

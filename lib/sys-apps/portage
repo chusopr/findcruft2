@@ -1,0 +1,7 @@
+[[ -r /etc/dispatch-conf.conf ]] && cruftdir $(sed 's/[[:space:]]*archive-dir=\("\?\)\(.*\)\1$/\2/;t;d' /etc/dispatch-conf.conf)
+cruftdir /etc/portage
+cruftdir /var/log/portage
+cruftdir /var/lib/portage
+echo /var/log/emerge.log
+echo /var/log/emerge-fetch.log
+echo /var/log/dispatch-conf.log

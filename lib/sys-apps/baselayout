@@ -1,0 +1,10 @@
+cruftfile "/etc/init.d/net\..*"
+cruftdir /etc/runlevels
+echo /var/log/dmesg
+
+if [[ ${PVR/.*} == "2" ]]; then
+	cruftdir /lib/rc/console
+	cruftdir /lib/rc/init.d
+else
+	cruftdir /var/lib/init.d
+fi

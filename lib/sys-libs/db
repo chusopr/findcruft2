@@ -1,0 +1,6 @@
+echo /usr/include/db.h
+echo /usr/include/db_185.h
+echo /usr/lib/libdb.a
+echo /usr/lib/libdb.so
+echo /usr/lib/libdb_cxx.a
+echo /usr/lib/libdb_cxx.so

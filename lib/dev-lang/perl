@@ -1,0 +1,3 @@
+echo /usr/lib/libperl.so
+cruftfile "/usr/lib/perl5/${PV}/.*/Encode/ConfigLocal.pm"
+cruftdir $(perl -e 'use Config; print $Config{installsitearch};')

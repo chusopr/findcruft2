@@ -1,0 +1,8 @@
+echo /var/run/cron.pid
+
+for x in /var/spool/cron/crontabs/*; do
+	name=$(basename $x)
+	if grep -q "^$name:" /etc/passwd; then
+		echo $x
+	fi
+done

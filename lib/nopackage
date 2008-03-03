@@ -1,0 +1,126 @@
+echo /
+echo /.rnd
+echo /etc/.pwd.lock
+[[ -h /etc/runlevels/boot/clock ]] && echo /etc/adjtime
+[[ -d /proc/asound ]] && echo /etc/asound.state
+echo /etc/csh.env
+echo /etc/dnsdomainname
+echo /etc/env.d/??games
+echo /etc/fstab
+echo /etc/group
+echo /etc/group-
+echo /etc/gshadow
+echo /etc/gshadow-
+echo /etc/hostname
+echo /etc/hosts
+echo /etc/ioctl.save
+echo /etc/ld.so.cache
+echo /etc/ld.so.conf
+echo /etc/localtime
+echo /etc/make.conf
+echo /etc/make.profile
+echo /etc/mime-magic
+echo /etc/mime-magic.dat
+echo /etc/modprobe.conf
+echo /etc/modprobe.conf.old
+echo /etc/modprobe.devfs
+echo /etc/modprobe.devfs.old
+echo /etc/modules.conf
+echo /etc/modules.conf.old
+echo /etc/mtab
+echo /etc/passwd
+echo /etc/passwd-
+echo /etc/profile.csh
+echo /etc/profile.env
+echo /etc/resolv.conf
+echo /etc/shadow
+echo /etc/shadow-
+
+# font caches
+echo /var/cache/fonts/ls-R
+cruftdir /var/cache/fonts/pk
+cruftdir /var/cache/fonts/source
+cruftdir /var/cache/fonts/tfm
+
+# system logs
+echo /var/log/faillog
+echo /var/log/lastlog
+echo /var/log/wtmp
+echo /var/run/utmp
+echo /var/run/random-seed
+
+# cron
+echo /var/spool/cron/lastrun/cron.daily
+echo /var/spool/cron/lastrun/cron.hourly
+echo /var/spool/cron/lastrun/cron.monthly
+echo /var/spool/cron/lastrun/cron.weekly
+
+# modules and sources for kernel versions
+echo /usr/src/linux
+cruftdir /lib/modules/$(uname -r)
+
+for i in $(ls -1 /usr/src/linux-*/ &>/dev/null); do
+	KV=$(unset ARCH; make -s kernelversion -C ${i})
+	cruftdir /lib/modules/${KV}
+	cruftdir ${i}
+done
+
+# icon theme caches
+cruftfile "/usr/share/icons/.*/icon-theme.cache"
+
+# mime stuff
+echo /usr/share/mime/XMLnamespaces
+echo /usr/share/mime/aliases
+echo /usr/share/mime/application
+echo /usr/share/mime/audio
+echo /usr/share/mime/globs
+echo /usr/share/mime/image
+echo /usr/share/mime/inode
+echo /usr/share/mime/magic
+echo /usr/share/mime/message
+echo /usr/share/mime/model
+echo /usr/share/mime/multipart
+echo /usr/share/mime/subclasses
+echo /usr/share/mime/text
+echo /usr/share/mime/video
+echo /usr/share/mime/mime.cache
+
+for package in /usr/share/mime/packages/*.xml; do
+	[[ -f ${package} ]] \
+	&& sed "s!.*<mime-type[[:space:]]\+type=\"\([^\"]*\)\">.*!/usr/share/mime/\1.xml!
+	s!.*<mime-type[[:space:]]\+type='\([^']*\)'>.*!/usr/share/mime/\1.xml!
+	t;d" ${package}
+done
+
+# base-system dirs and .keep files
+echo /etc/cron.daily/.keep
+echo /etc/cron.hourly/.keep
+echo /etc/cron.monthly/.keep
+echo /etc/cron.weekly/.keep
+echo /etc/opt
+echo /etc/opt/.keep
+echo /lib/.keep
+echo /lib32/.keep
+echo /lib/rcscripts/init.d/.keep
+echo /lib/rcscripts/tmp/.keep
+echo /opt
+echo /opt/.keep
+echo /usr/lib/.keep
+echo /usr/lib32/.keep
+echo /usr/share/doc/.keep
+echo /usr/share/info/.keep
+echo /usr/share/man/.keep
+echo /usr/src/.keep
+echo /usr/tmp
+echo /var/db
+echo /var/lock/.keep
+echo /var/run/.keep
+echo /var/spool/.keep
+
+# lost+found dirs
+for i in $(cat /proc/mounts | awk '{ print $2 }' | sort -u); do
+	echo ${i}/lost+found
+done
+
+# cruft config files
+cruftdir $FINDCRUFT_CONFDIR
