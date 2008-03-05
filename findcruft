@@ -181,22 +181,15 @@ generate_ignore()
 
 generate_symlink()
 {
-	if [[ -n "${SYMLINK_SED}" ]]; then
-		echo "${SYMLINK_SED}"
-		return
-	fi
-
 	ssource "${FINDCRUFT_CONFDIR}"/symlink \
 	| while read symlink target; do
-		SYMLINK_SED="${SYMLINK_SED}s:^${symlink%/}/:${target%/}/:;"
+		echo -n "s:^${symlink%/}/:${target%/}/:;"
 	done
 
-	ssource "${FINDCRUFT_CONFDIR}"/symlink.local \
+	ssource "${FINDCRUFT_CONFDIR}"/ignore.local \
 	| while read symlink target; do
-		SYMLINK_SED="${SYMLINK_SED}s:^${symlink%/}/:${target%/}/:;"
+		echo -n "s:^${symlink%/}/:${target%/}/:;"
 	done
-
-	echo "${SYMLINK_SED}"
 }
 
 is_multilib()
