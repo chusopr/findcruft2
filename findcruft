@@ -20,14 +20,14 @@
 #
 # Dependencies:
 # app-shells/bash: bash
-# sys-apps/coreutils: cat comm echo pwd rm sort tail
+# sys-apps/coreutils: cat comm rm sort tail
 # sys-apps/findutils: find xargs
 # sys-apps/grep: grep
 # sys-apps/sed: sed
 
 shopt -s extglob
-export LC_ALL='C'
-export LC_COLLATE='C'
+export LC_ALL=C
+export LC_COLLATE=C
 
 PROG="findcruft"
 VERSION="2.0"
@@ -141,7 +141,7 @@ cascade_walk()
 	[[ -r "$(pwd)/${filename}" ]] \
 	&& ${action} "$(pwd)/${filename}"
 
-	for ((i=0; i<cnt; i++)); do
+	for (( i = 0; i < cnt; i++ )); do
 		popd >/dev/null
 		[[ -r "$(pwd)/${filename}" ]] \
 		&& ${action} "$(pwd)/${filename}"
@@ -181,15 +181,22 @@ generate_ignore()
 
 generate_symlink()
 {
+	if [[ -n "${SYMLINK_SED}" ]]; then
+		echo "${SYMLINK_SED}"
+		return
+	fi
+
 	ssource "${FINDCRUFT_CONFDIR}"/symlink \
 	| while read symlink target; do
-		echo -n "s:^${symlink%/}/:${target%/}/:;"
+		SYMLINK_SED="${SYMLINK_SED}s:^${symlink%/}/:${target%/}/:;"
 	done
 
-	ssource "${FINDCRUFT_CONFDIR}"/ignore.local \
+	ssource "${FINDCRUFT_CONFDIR}"/symlink.local \
 	| while read symlink target; do
-		echo -n "s:^${symlink%/}/:${target%/}/:;"
+		SYMLINK_SED="${SYMLINK_SED}s:^${symlink%/}/:${target%/}/:;"
 	done
+
+	echo "${SYMLINK_SED}"
 }
 
 is_multilib()
@@ -299,22 +306,22 @@ collect_cruft()
 	log "Collecting cruft files ..."
 	log
 	comm -2 -3 ${unfiles} ${fpfiles}
+
+	rm -f ${unfiles} ${fpfiles}
 }
 
 grab_setting PORTDIR /usr/portage
-grab_setting DISTDIR ${PORTDIR}/distfiles
-grab_setting PKGDIR ${PORTDIR}/packages
+grab_setting DISTDIR "${PORTDIR}"/distfiles
+grab_setting PKGDIR "${PORTDIR}"/packages
 grab_setting PORT_LOGDIR /var/log/portage
 grab_setting PORTDIR_OVERLAY ""
 grab_setting PORTAGE_TMPDIR /var/tmp
-grab_setting CCACHE_DIR ${PORTAGE_TMPDIR}/ccache
+grab_setting CCACHE_DIR "${PORTAGE_TMPDIR}"/ccache
 grab_setting ARCH x86
 grab_setting CHOST i386-pc-linux-gnu
 
-if [[ $(basename -- $0) == "findcruft" ]]; then
-	if [[ $# -ne 0 ]]; then
-		usage
-	else
-		collect_cruft
-	fi
+if [[ $# -ne 0 ]]; then
+	usage
+else
+	collect_cruft
 fi
