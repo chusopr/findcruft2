@@ -23,6 +23,7 @@ cruftfile "/usr/bin/.*-.*-.*-.*-g77"
 cruftfile "/usr/bin/.*-.*-.*-.*-gcov"
 cruftfile "/usr/bin/.*-.*-.*-.*-gcc"
 cruftfile "/usr/bin/.*-.*-.*-.*-gfortran"
+cruftfile "/usr/share/gcc-data/.*-.*-.*-.*/.*/info"
 cruftfile "/usr/share/gcc-data/.*-.*-.*-.*/.*/info/dir"
 echo /lib/libgcc_s.so.1
 echo /lib32/libgcc_s.so.1

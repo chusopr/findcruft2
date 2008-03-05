@@ -113,6 +113,7 @@ echo /usr/share/man/.keep
 echo /usr/src/.keep
 echo /usr/tmp
 echo /var/db
+echo /var/lock
 echo /var/lock/.keep
 echo /var/run/.keep
 echo /var/spool/.keep
