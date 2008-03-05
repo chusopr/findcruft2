@@ -18,6 +18,7 @@ echo /etc/ld.so.cache
 echo /etc/ld.so.conf
 echo /etc/localtime
 echo /etc/make.conf
+cruftdir /etc/make.conf.d
 echo /etc/make.profile
 echo /etc/mime-magic
 echo /etc/mime-magic.dat
@@ -60,6 +61,7 @@ echo /usr/src/linux
 cruftdir /lib/modules/$(uname -r)
 
 for i in $(ls -1 /usr/src/linux-*/ &>/dev/null); do
+	[[ -e ${i} ]] || continue
 	KV=$(unset ARCH; make -s kernelversion -C ${i})
 	cruftdir /lib/modules/${KV}
 	cruftdir ${i}
