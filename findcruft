@@ -32,7 +32,13 @@ export LC_COLLATE=C
 PROG="findcruft"
 VERSION="2.0"
 
-: ${FINDCRUFT_CONFDIR:=$(pwd)/lib}
+if [[ -z ${FINDCRUFT_CONFDIR} ]]; then
+	if [[ -d /etc/findcruft ]]; then
+		FINDCRUFT_CONFDIR=/etc/findcruft
+	else
+		FINDCRUFT_CONFDIR=$(pwd)/etc
+	fi
+fi
 
 NO=$'\x1b[0;0m'
 BR=$'\x1b[0;01m'
