@@ -4,3 +4,4 @@ echo /usr/bin/rdoc
 echo /usr/bin/ri
 echo /usr/bin/ruby
 echo /usr/bin/testrb
+echo /usr/lib/libruby.so
