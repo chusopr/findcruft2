@@ -1,4 +1,5 @@
 if [[ ${PVR/.*} == "1" ]]; then
+	echo /etc/conf.d/net
 	cruftfile "/etc/init.d/net\..*"
 	cruftdir /etc/runlevels
 	cruftdir /var/lib/init.d
