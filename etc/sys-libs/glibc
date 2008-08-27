@@ -2,3 +2,5 @@ echo /etc/locale.gen
 echo /usr/lib/gconv/gconv-modules.cache
 cruftdir /usr/lib/locale
 echo /var/run/nscd
+echo /var/run/nscd/nscd.pid
+echo /var/run/nscd/socket
