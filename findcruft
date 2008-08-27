@@ -129,9 +129,12 @@ when you unpack a new rule archive into the directory.
 EOF
 }
 
-ssource()
+source()
 {
-	[[ -r "$1" ]] && source "$1"
+	[[ -r "$1" ]] || return
+	pushd $(dirname $1) &>/dev/null
+	builtin source "$1"
+	popd &>/dev/null
 }
 
 cascade_walk()
@@ -160,9 +163,9 @@ grab_setting()
 
 	export $name="$(
 		eval $name="$default"
-		ssource /etc/make.globals
+		source /etc/make.globals
 		cascade_walk source make.defaults
-		ssource /etc/make.conf
+		source /etc/make.conf
 		echo ${!name}
 	)"
 }
@@ -174,12 +177,12 @@ log()
 
 generate_ignore()
 {
-	ssource "${FINDCRUFT_CONFDIR}"/ignore \
+	source "${FINDCRUFT_CONFDIR}"/ignore \
 	| while read ignore; do
 		echo -n "${ignore} "
 	done
 
-	ssource "${FINDCRUFT_CONFDIR}"/ignore.local \
+	source "${FINDCRUFT_CONFDIR}"/ignore.local \
 	| while read ignore; do
 		echo -n "${ignore} "
 	done
@@ -187,12 +190,12 @@ generate_ignore()
 
 generate_symlink()
 {
-	ssource "${FINDCRUFT_CONFDIR}"/symlink \
+	source "${FINDCRUFT_CONFDIR}"/symlink \
 	| while read symlink target; do
 		echo -n "s:^${symlink%/}/:${target%/}/:;"
 	done
 
-	ssource "${FINDCRUFT_CONFDIR}"/ignore.local \
+	source "${FINDCRUFT_CONFDIR}"/ignore.local \
 	| while read symlink target; do
 		echo -n "s:^${symlink%/}/:${target%/}/:;"
 	done
@@ -272,9 +275,9 @@ collect_fp()
 		grep "^${dir%/}/" ${unfiles}
 	}
 
-	ssource "${FINDCRUFT_CONFDIR}"/functions
-	ssource "${FINDCRUFT_CONFDIR}"/nopackage
-	ssource "${FINDCRUFT_CONFDIR}"/nopackage.local
+	source "${FINDCRUFT_CONFDIR}"/functions
+	source "${FINDCRUFT_CONFDIR}"/nopackage
+	source "${FINDCRUFT_CONFDIR}"/nopackage.local
 
 	local pat="*(+([[:digit:]]).)+([[:digit:]])?([[:lower:]])?(_@(alpha|beta|pre|rc|p)*([[:digit:]]))?(-r+([[:digit:]]))"
 
@@ -285,7 +288,7 @@ collect_fp()
 			PVR=${i#$CPN-}
 			PV=${PVR%-r+([[:digit:]])}
 			SLOT=$(</var/db/pkg/${i}/SLOT)
-			ssource ${FINDCRUFT_CONFDIR}/${CPN}
+			source ${FINDCRUFT_CONFDIR}/${CPN}
 		fi
 	done
 	popd >/dev/null
