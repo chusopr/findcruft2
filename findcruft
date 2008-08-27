@@ -288,6 +288,8 @@ collect_fp()
 			PVR=${i#$CPN-}
 			PV=${PVR%-r+([[:digit:]])}
 			SLOT=$(</var/db/pkg/${i}/SLOT)
+			if [[ -r ${FINDCRUFT_CONFDIR}/${CPN} ]]; then
+				log " ... ${CPN}"
 			source ${FINDCRUFT_CONFDIR}/${CPN}
 		fi
 	done
