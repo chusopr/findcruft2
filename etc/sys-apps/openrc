@@ -1,0 +1,5 @@
+echo /etc/conf.d/net
+cruftfile "/etc/init.d/net\..*"
+cruftdir /etc/runlevels
+cruftdir /lib/rc/init.d
+echo /var/log/dmesg
