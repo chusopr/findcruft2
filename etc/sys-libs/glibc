@@ -1,3 +1,4 @@
 echo /etc/locale.gen
 echo /usr/lib/gconv/gconv-modules.cache
 cruftdir /usr/lib/locale
+echo /var/run/nscd

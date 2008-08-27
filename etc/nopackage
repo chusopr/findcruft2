@@ -18,7 +18,6 @@ echo /etc/ld.so.cache
 echo /etc/ld.so.conf
 echo /etc/localtime
 echo /etc/make.conf
-cruftdir /etc/make.conf.d
 echo /etc/make.profile
 echo /etc/mime-magic
 echo /etc/mime-magic.dat
