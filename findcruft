@@ -290,7 +290,8 @@ collect_fp()
 			SLOT=$(</var/db/pkg/${i}/SLOT)
 			if [[ -r ${FINDCRUFT_CONFDIR}/${CPN} ]]; then
 				log " ... ${CPN}"
-			source ${FINDCRUFT_CONFDIR}/${CPN}
+				source ${FINDCRUFT_CONFDIR}/${CPN}
+			fi
 		fi
 	done
 	popd >/dev/null
