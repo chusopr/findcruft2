@@ -4,6 +4,8 @@ echo /etc/make.conf
 echo /etc/make.profile
 cruftdir /etc/portage
 echo /etc/profile.env
+echo /var/db
+echo /var/db/pkg
 cruftdir /var/log/portage
 cruftdir /var/lib/portage
 echo /var/log/emerge.log
