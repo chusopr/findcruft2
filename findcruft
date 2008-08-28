@@ -1,5 +1,5 @@
 #!/bin/bash
-# (c) 2007 Benedikt Böhm <hollow@gentoo.org>
+# (c) 2007-2008 Benedikt Böhm <hollow@gentoo.org>
 # (c) 2004 Benjamin Braatz <sean@inmymind.de>
 # inspired by "cruft" by Ed Catmur
 #
@@ -166,14 +166,9 @@ generate_symlink()
 	done
 }
 
-is_multilib()
-{
-	[[ -L /lib ]]
-}
-
 multilib_sed()
 {
-	if is_multilib; then
+	if [[ -L /lib ]]; then
 		sed -e 's:^\(/usr\)\?/lib/:\1/lib64/:'
 	else
 		cat
@@ -280,6 +275,11 @@ collect_cruft()
 	rm -f ${unfiles} ${fpfiles}
 }
 
+if [[ $# -ne 0 ]]; then
+	usage
+	exit 1
+fi
+
 log "Collecting portage environment ..."
 
 ARCH=$(portageq envvar ARCH)
@@ -292,8 +292,4 @@ PORTDIR=$(portageq portdir)
 PORTDIR_OVERLAY=$(portageq portdir_overlay)
 PORT_LOGDIR=$(portageq envvar PORT_LOGDIR)
 
-if [[ $# -ne 0 ]]; then
-	usage
-else
-	collect_cruft
-fi
+collect_cruft
