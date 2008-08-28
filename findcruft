@@ -155,15 +155,19 @@ generate_ignore()
 
 generate_symlink()
 {
-	source "${FINDCRUFT_CONFDIR}"/symlink \
-	| while read symlink target; do
-		echo -n "s:^${target%/}/:${symlink%/}/:;"
-	done
+	if [[ -z "${SYMLINK_CACHE}" ]]; then
+		source "${FINDCRUFT_CONFDIR}"/symlink \
+		| while read symlink target; do
+			SYMLINK_CACHE="${SYMLINK_CACHE}s:^${target%/}/:${symlink%/}/:;"
+		done
 
-	source "${FINDCRUFT_CONFDIR}"/symlink.local \
-	| while read symlink; do
-		echo -n "s:^${target%/}/:${symlink%/}/:;"
-	done
+		source "${FINDCRUFT_CONFDIR}"/symlink.local \
+		| while read symlink; do
+			SYMLINK_CACHE="${SYMLINK_CACHE}s:^${target%/}/:${symlink%/}/:;"
+		done
+	fi
+
+	echo -n "${SYMLINK_CACHE}"
 }
 
 multilib_sed()
@@ -198,7 +202,7 @@ collect_portage()
 		-e "s:^sym \(.*\) -> .* .*$:\1:" \
 		-e "s:^dir \(.*\)$:\1:" \
 	| sed -e "s:.*\.py$:\0\n\0c\n\0o:" \
-	| sed -e $(generate_symlink) \
+	| sed -e "$(generate_symlink)" \
 	| multilib_sed
 }
 
@@ -224,13 +228,13 @@ collect_fp()
 
 	cruftfile()
 	{
-		file="$(echo "$1" | sed -e $(generate_symlink) | multilib_sed)"
+		file="$(echo "$1" | sed -e "$(generate_symlink)" | multilib_sed)"
 		grep "^${file}$" ${unfiles}
 	}
 
 	cruftdir()
 	{
-		dir="$(echo "$1" | sed -e $(generate_symlink) | multilib_sed)"
+		dir="$(echo "$1" | sed -e "$(generate_symlink)" | multilib_sed)"
 		grep "^${dir%/}$" ${unfiles}
 		grep "^${dir%/}/" ${unfiles}
 	}
@@ -264,7 +268,7 @@ collect_cruft()
 
 	collect_unmanaged > ${unfiles}
 	collect_fp ${unfiles} \
-	| sed -e $(generate_symlink) \
+	| sed -e "$(generate_symlink)" \
 	| multilib_sed \
 	| sort -u > ${fpfiles}
 
