@@ -157,12 +157,12 @@ generate_symlink()
 {
 	source "${FINDCRUFT_CONFDIR}"/symlink \
 	| while read symlink target; do
-		echo -n "s:^${symlink%/}/:${target%/}/:;"
+		echo -n "s:^${target%/}/:${symlink%/}/:;"
 	done
 
-	source "${FINDCRUFT_CONFDIR}"/ignore.local \
-	| while read symlink target; do
-		echo -n "s:^${symlink%/}/:${target%/}/:;"
+	source "${FINDCRUFT_CONFDIR}"/symlink.local \
+	| while read symlink; do
+		echo -n "s:^${target%/}/:${symlink%/}/:;"
 	done
 }
 
