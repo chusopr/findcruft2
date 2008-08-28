@@ -1,40 +1,13 @@
-echo /
 echo /.rnd
 echo /etc/.pwd.lock
-[[ -h /etc/runlevels/boot/clock ]] && echo /etc/adjtime
+[[ -L /etc/runlevels/boot/clock ]] && echo /etc/adjtime
 [[ -d /proc/asound ]] && echo /etc/asound.state
-echo /etc/csh.env
-echo /etc/dnsdomainname
-echo /etc/env.d/??games
-echo /etc/fstab
-echo /etc/group
-echo /etc/group-
-echo /etc/gshadow
-echo /etc/gshadow-
-echo /etc/hostname
 echo /etc/hosts
-echo /etc/ioctl.save
 echo /etc/ld.so.cache
 echo /etc/ld.so.conf
 echo /etc/localtime
-echo /etc/make.conf
-echo /etc/make.profile
-echo /etc/mime-magic
-echo /etc/mime-magic.dat
-echo /etc/modprobe.conf
-echo /etc/modprobe.conf.old
-echo /etc/modprobe.devfs
-echo /etc/modprobe.devfs.old
-echo /etc/modules.conf
-echo /etc/modules.conf.old
 echo /etc/mtab
-echo /etc/passwd
-echo /etc/passwd-
-echo /etc/profile.csh
-echo /etc/profile.env
 echo /etc/resolv.conf
-echo /etc/shadow
-echo /etc/shadow-
 
 # font caches
 echo /var/cache/fonts/ls-R
@@ -43,17 +16,10 @@ cruftdir /var/cache/fonts/source
 cruftdir /var/cache/fonts/tfm
 
 # system logs
-echo /var/log/faillog
 echo /var/log/lastlog
 echo /var/log/wtmp
 echo /var/run/utmp
 echo /var/run/random-seed
-
-# cron
-echo /var/spool/cron/lastrun/cron.daily
-echo /var/spool/cron/lastrun/cron.hourly
-echo /var/spool/cron/lastrun/cron.monthly
-echo /var/spool/cron/lastrun/cron.weekly
 
 # modules and sources for kernel versions
 echo /usr/src/linux
@@ -93,36 +59,21 @@ for package in /usr/share/mime/packages/*.xml; do
 	t;d" ${package}
 done
 
-# base-system dirs and .keep files
-echo /etc/cron.daily/.keep
-echo /etc/cron.hourly/.keep
-echo /etc/cron.monthly/.keep
-echo /etc/cron.weekly/.keep
-echo /etc/opt
-echo /etc/opt/.keep
-echo /lib/.keep
-echo /lib32/.keep
-echo /lib/rcscripts/init.d/.keep
-echo /lib/rcscripts/tmp/.keep
-echo /opt
-echo /opt/.keep
-echo /usr/lib/.keep
-echo /usr/lib32/.keep
-echo /usr/share/doc/.keep
-echo /usr/share/info/.keep
-echo /usr/share/man/.keep
-echo /usr/src/.keep
-echo /usr/tmp
-echo /var/db
-echo /var/lock
-echo /var/lock/.keep
-echo /var/run/.keep
-echo /var/spool/.keep
-
 # lost+found dirs
-for i in $(cat /proc/mounts | awk '{ print $2 }' | sort -u); do
+for i in $(awk '{ print $2 }' < /proc/mounts); do
 	echo ${i}/lost+found
 done
 
+# vserver init script for style gentoo
+if [[ -e /proc/self/vinfo ]]; then
+	if [[ $(sed 's/^XID:[[:space:]]\+\(.*\)/\1/;tn;d;:n' /proc/self/vinfo) != "0" ]]; then
+		if [[ -e /lib/rc/sh/init-vserver.sh ]]; then
+			echo /lib/rc/sh/init-vserver.sh
+		else
+			echo /lib/rcscripts/sh/init-vserver.sh
+		fi
+	fi
+fi
+
 # cruft config files
-cruftdir $FINDCRUFT_CONFDIR
+echo ${FINDCRUFT_CONFDIR}

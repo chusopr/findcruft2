@@ -132,42 +132,7 @@ EOF
 source()
 {
 	[[ -r "$1" ]] || return
-	pushd $(dirname $1) &>/dev/null
 	builtin source "$1"
-	popd &>/dev/null
-}
-
-cascade_walk()
-{
-	local action="$1" filename="$2" cnt=0
-
-	cd -P /etc/make.profile
-	while [[ -f parent ]]; do
-		pushd $(tail -n1 parent) >/dev/null
-		cnt=$((cnt+1))
-	done
-
-	[[ -r "$(pwd)/${filename}" ]] \
-	&& ${action} "$(pwd)/${filename}"
-
-	for (( i = 0; i < cnt; i++ )); do
-		popd >/dev/null
-		[[ -r "$(pwd)/${filename}" ]] \
-		&& ${action} "$(pwd)/${filename}"
-	done
-}
-
-grab_setting()
-{
-	local name="$1" default="$2"
-
-	export $name="$(
-		eval $name="$default"
-		source /etc/make.globals
-		cascade_walk source make.defaults
-		source /etc/make.conf
-		echo ${!name}
-	)"
 }
 
 log()
@@ -289,7 +254,7 @@ collect_fp()
 			PV=${PVR%-r+([[:digit:]])}
 			SLOT=$(</var/db/pkg/${i}/SLOT)
 			if [[ -r ${FINDCRUFT_CONFDIR}/${CPN} ]]; then
-				log " ... ${CPN}"
+				log "  ${CPN}"
 				source ${FINDCRUFT_CONFDIR}/${CPN}
 			fi
 		fi
@@ -315,15 +280,17 @@ collect_cruft()
 	rm -f ${unfiles} ${fpfiles}
 }
 
-grab_setting PORTDIR /usr/portage
-grab_setting DISTDIR "${PORTDIR}"/distfiles
-grab_setting PKGDIR "${PORTDIR}"/packages
-grab_setting PORT_LOGDIR /var/log/portage
-grab_setting PORTDIR_OVERLAY ""
-grab_setting PORTAGE_TMPDIR /var/tmp
-grab_setting CCACHE_DIR "${PORTAGE_TMPDIR}"/ccache
-grab_setting ARCH x86
-grab_setting CHOST i386-pc-linux-gnu
+log "Collecting portage environment ..."
+
+ARCH=$(portageq envvar ARCH)
+CCACHE_DIR=$(portageq envvar CCACHE_DIR)
+CHOST=$(portageq envvar CHOST)
+DISTDIR=$(portageq distdir)
+PKGDIR=$(portageq pkgdir)
+PORTAGE_TMPDIR=$(portageq envvar PORTAGE_TMPDIR)
+PORTDIR=$(portageq portdir)
+PORTDIR_OVERLAY=$(portageq portdir_overlay)
+PORT_LOGDIR=$(portageq envvar PORT_LOGDIR)
 
 if [[ $# -ne 0 ]]; then
 	usage

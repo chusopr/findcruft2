@@ -1,3 +1,3 @@
 echo /var/run/syslog-ng.pid
 echo /var/lib/syslog-ng.persist
-lsof -Fn +D /var/log/ -a -p $(pidof syslog-ng) | grep '^n/var/log/' | sed 's/^n//'
+lsof -Fn +D /var/log/ -a -p $(pidof syslog-ng) | sed 's/^n//;tn;d;:n'

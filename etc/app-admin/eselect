@@ -1,1 +1,1 @@
-cruftdir /var/lib/eselect
+echo /var/lib/eselect/env/ld-mtimedb

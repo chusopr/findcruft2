@@ -4,13 +4,12 @@ echo /dev
 echo /home
 echo /media
 echo /mnt
-echo /lost+found
 echo /proc
 echo /root
-echo /srv
 echo /sys
 echo /tmp
 echo /usr/local
+echo /usr/tmp
 echo /var/tmp
 
 # Portage stuff (partly too large to be ignored
