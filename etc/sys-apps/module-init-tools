@@ -1,1 +1,1 @@
-/etc/modprobe.conf
+echo /etc/modprobe.conf
