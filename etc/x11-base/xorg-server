@@ -1,3 +1,4 @@
+echo /etc/X11/xorg.conf
 cruftfile "/var/log/Xorg\..*\.log"
 cruftfile "/var/log/Xorg\..*\.log\.old"
 cruftdir "/var/run/xauth"
