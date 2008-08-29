@@ -73,6 +73,3 @@ if [[ -e /proc/self/vinfo ]]; then
 		fi
 	fi
 fi
-
-# cruft config files
-echo ${FINDCRUFT_CONFDIR}

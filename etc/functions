@@ -1,34 +1,22 @@
-# functions (borrowed from ecatmur's "cruft"):
-NS_PLUGINS_DIR="$(sed 's/^PLUGINS_DIR="\(.*\)"$/\1/;t;d' $PORTDIR/eclass/nsplugins.eclass)"
-function nsplugin() {
-        for MYFILE in "${@}"; do
-                echo "/usr/lib/${NS_PLUGINS_DIR}/${MYFILE}"
-        done
+NS_PLUGINS_DIR=$(sed 's/^PLUGINS_DIR="\(.*\)"$/\1/;t;d' ${PORTDIR}/eclass/nsplugins.eclass)
+
+nsplugin()
+{
+	for file in $@; do
+		echo /usr/lib/${NS_PLUGINS_DIR}/${file}
+	done
 }
-function fontdir() {
-        for MYDIR in "${@}"; do
-                if [[ "$MYDIR" == /* ]]
-		then
-			echo ${MYDIR}/encodings.dir
-                        echo ${MYDIR}/fonts.cache-1
-			echo ${MYDIR}/fonts.dir
-			echo ${MYDIR}/fonts.list
-			echo ${MYDIR}/fonts.scale
-                elif [[ "${MYDIR}" ]]
-		then
-                        fontdir /usr/share/fonts/${MYDIR}
-                        fontdir ${MYDIR%/*}
-                else
-                        fontdir /usr/share/fonts
-                fi
-        done
-}
-function xpiapp() {
-	path="$1"
-	shift
-	[[ "$#" -gt 0 ]] && for x in "$*"; do xpiapp "$x"; done
-	[[ "$path" != /* ]] && path="/usr/lib/${path}"
-	[[ "$path" == */ ]] && path="${path%/}"
+
+xpiapp()
+{
+	while [[ "$#" -gt 1 ]]; do
+		xpiapp $1 && shift
+	done
+
+	path=$1
+	[[ "${path}" != /* ]] && path="/usr/lib/${path}"
+	[[ "${path}" == */ ]] && path="${path%/}"
+
 	echo ${path}/chrome/chrome.rdf
 	cruftdir ${path}/chrome/overlayinfo
 	echo ${path}/components/compreg.dat
@@ -39,8 +27,25 @@ function xpiapp() {
 	cruftdir ${path}/searchplugins
 }
 
-svcdir() {
-	path="$1"
+fontdir()
+{
+	for dir in $@; do
+		if [[ "${dir}" == /* ]]; then
+			echo ${dir}/encodings.dir
+			echo ${dir}/fonts.cache-1
+			echo ${dir}/fonts.dir
+			echo ${dir}/fonts.list
+			echo ${dir}/fonts.scale
+		elif [[ "${dir}" ]]; then
+			fontdir /usr/share/fonts/${dir}
+		fi
+	done
+}
+
+svcdir()
+{
+	path=$1
+
 	echo ${path}/supervise
 	echo ${path}/supervise/control
 	echo ${path}/supervise/lock

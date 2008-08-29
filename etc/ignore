@@ -26,3 +26,6 @@ echo ${PORTAGE_TMPDIR%/}/portage-pkg
 echo ${CCACHE_DIR%/}
 echo /var/cache/edb
 echo /var/db/pkg
+
+# ignore findcruft cofnig dir
+echo ${FINDCRUFT_CONFDIR}
