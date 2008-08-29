@@ -8,12 +8,6 @@ echo /etc/localtime
 echo /etc/mtab
 echo /etc/resolv.conf
 
-# font caches
-echo /var/cache/fonts/ls-R
-cruftdir /var/cache/fonts/pk
-cruftdir /var/cache/fonts/source
-cruftdir /var/cache/fonts/tfm
-
 # system logs
 echo /var/log/lastlog
 echo /var/log/wtmp
@@ -29,33 +23,6 @@ for i in $(ls -1 /usr/src/linux-*/ &>/dev/null); do
 	KV=$(unset ARCH; make -s kernelversion -C ${i})
 	cruftdir /lib/modules/${KV}
 	cruftdir ${i}
-done
-
-# icon theme caches
-cruftfile "/usr/share/icons/.*/icon-theme.cache"
-
-# mime stuff
-echo /usr/share/mime/XMLnamespaces
-echo /usr/share/mime/aliases
-echo /usr/share/mime/application
-echo /usr/share/mime/audio
-echo /usr/share/mime/globs
-echo /usr/share/mime/image
-echo /usr/share/mime/inode
-echo /usr/share/mime/magic
-echo /usr/share/mime/message
-echo /usr/share/mime/model
-echo /usr/share/mime/multipart
-echo /usr/share/mime/subclasses
-echo /usr/share/mime/text
-echo /usr/share/mime/video
-echo /usr/share/mime/mime.cache
-
-for package in /usr/share/mime/packages/*.xml; do
-	[[ -f ${package} ]] \
-	&& sed "s!.*<mime-type[[:space:]]\+type=\"\([^\"]*\)\">.*!/usr/share/mime/\1.xml!
-	s!.*<mime-type[[:space:]]\+type='\([^']*\)'>.*!/usr/share/mime/\1.xml!
-	t;d" ${package}
 done
 
 # lost+found dirs
