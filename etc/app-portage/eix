@@ -1,1 +1,3 @@
 echo /var/cache/eix
+echo /var/cache/eix.previous
+echo /var/log/eix-sync.log

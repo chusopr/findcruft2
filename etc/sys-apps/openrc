@@ -1,3 +1,4 @@
+[[ -L /etc/runlevels/boot/hwclock ]] && echo /etc/adjtime
 echo /etc/conf.d/net
 cruftfile "/etc/init.d/net\..*"
 cruftdir /etc/runlevels

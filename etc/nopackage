@@ -1,6 +1,5 @@
 echo /.rnd
 echo /etc/.pwd.lock
-[[ -L /etc/runlevels/boot/clock ]] && echo /etc/adjtime
 [[ -d /proc/asound ]] && echo /etc/asound.state
 echo /etc/hosts
 echo /etc/ld.so.cache

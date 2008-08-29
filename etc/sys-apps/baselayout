@@ -27,6 +27,7 @@ for i in /boot /dev /etc/profile.d /home /mnt /proc /root \
 done
 
 if [[ ${PVR/.*} == "1" ]]; then
+	[[ -L /etc/runlevels/boot/clock ]] && echo /etc/adjtime
 	echo /etc/conf.d/net
 	cruftfile "/etc/init.d/net\..*"
 	cruftdir /etc/runlevels
