@@ -30,7 +30,7 @@ cruftfile "/usr/bin/.*-.*-.*-.*-strings"
 cruftfile "/usr/bin/.*-.*-.*-.*-strip"
 cruftdir "/usr/.*-.*-.*-.*/bin"
 cruftdir "/usr/.*-.*-.*-.*/lib"
-cruftfile "/usr/share/binutils-data/.*-.*-.*-.*/${PV}/info/dir"
+cruftdir "/usr/share/binutils-data/.*-.*-.*-.*/${PV}/info"
 echo /usr/include/ansidecl.h
 echo /usr/include/bfd.h
 echo /usr/include/bfdlink.h
