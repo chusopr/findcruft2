@@ -1,2 +1,2 @@
 echo /etc/eselect/postgresql/active
-cruftfile "/etc/eselect/postgresql/active.links*"
+cruftfile "/etc/eselect/postgresql/active.links.*"

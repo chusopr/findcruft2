@@ -239,6 +239,12 @@ collect_fp()
 		grep "^${dir%/}/" ${unfiles}
 	}
 
+        cruftonlydir()
+        {
+                dir="$(echo "$1" | sed -e "$(generate_symlink)" | multilib_sed)"
+                grep "^${dir%/}$" ${unfiles}
+        }
+
 	source "${FINDCRUFT_CONFDIR}"/functions
 	source "${FINDCRUFT_CONFDIR}"/nopackage
 	source "${FINDCRUFT_CONFDIR}"/nopackage.local
