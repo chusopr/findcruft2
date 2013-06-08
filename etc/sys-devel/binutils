@@ -6,6 +6,8 @@ echo /usr/bin/as
 echo /usr/bin/c++filt
 echo /usr/bin/gprof
 echo /usr/bin/ld
+echo /usr/bin/ld.bfd
+echo /usr/bin/ld.gold
 echo /usr/bin/nm
 echo /usr/bin/objcopy
 echo /usr/bin/objdump
@@ -28,6 +30,8 @@ cruftfile "/usr/bin/.*-.*-.*-.*-readelf"
 cruftfile "/usr/bin/.*-.*-.*-.*-size"
 cruftfile "/usr/bin/.*-.*-.*-.*-strings"
 cruftfile "/usr/bin/.*-.*-.*-.*-strip"
+cruftfile "/usr/bin/.*-.*-.*-.*-ld.bfd"
+cruftfile "/usr/bin/.*-.*-.*-.*-ld.gold"
 cruftdir "/usr/.*-.*-.*-.*/bin"
 cruftdir "/usr/.*-.*-.*-.*/lib"
 cruftdir "/usr/share/binutils-data/.*-.*-.*-.*/${PV}/info"
