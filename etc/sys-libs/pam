@@ -1,0 +1,11 @@
+if [ -d /lib64 ] ; then
+ echo /lib64/security/pam_unix_acct.so
+ echo /lib64/security/pam_unix_auth.so
+ echo /lib64/security/pam_unix_passwd.so
+ echo /lib64/security/pam_unix_session.so
+else
+ echo /lib/security/pam_unix_acct.so
+ echo /lib/security/pam_unix_auth.so
+ echo /lib/security/pam_unix_passwd.so
+ echo /lib/security/pam_unix_session.so
+fi
