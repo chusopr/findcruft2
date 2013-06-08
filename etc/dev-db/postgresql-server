@@ -1,0 +1,32 @@
+/usr/bin/pg_upgrade
+/usr/bin/pg_test_timing
+/usr/bin/pg_test_fsync
+/usr/bin/pg_standby
+/usr/bin/pg_archivecleanup
+/usr/bin/pg_receivexlog
+/usr/bin/pg_basebackup
+/usr/bin/pg_resetxlog
+/usr/bin/pg_controldata
+/usr/bin/initdb
+/usr/bin/pg_ctl
+/usr/bin/postmaster
+/usr/bin/postgres
+#
+# slot
+#
+SHORTSLOT=`echo -n ${SLOT} | sed 's/\.//g'`
+#
+/usr/bin/pg_upgrade${SHORTSLOT}
+/usr/bin/pg_test_timing${SHORTSLOT}
+/usr/bin/pg_test_fsync${SHORTSLOT}
+/usr/bin/pg_standby${SHORTSLOT}
+/usr/bin/pg_archivecleanup${SHORTSLOT}
+/usr/bin/pg_receivexlog${SHORTSLOT}
+/usr/bin/pg_basebackup${SHORTSLOT}
+/usr/bin/pg_resetxlog${SHORTSLOT}
+/usr/bin/pg_controldata${SHORTSLOT}
+/usr/bin/initdb${SHORTSLOT}
+/usr/bin/pg_ctl${SHORTSLOT}
+/usr/bin/postmaster${SHORTSLOT}
+/usr/bin/postgres${SHORTSLOT}
+#

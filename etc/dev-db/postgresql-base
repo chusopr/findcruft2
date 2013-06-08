@@ -1,0 +1,43 @@
+cruftdir /var/lib/postgresql
+#
+/usr/bin/vacuumlo
+/usr/bin/pgbench
+/usr/bin/oid2name
+/usr/bin/reindexdb
+/usr/bin/vacuumdb
+/usr/bin/clusterdb
+/usr/bin/pg_config
+/usr/bin/dropuser
+/usr/bin/psql
+/usr/bin/createuser
+/usr/bin/pg_dumpall
+/usr/bin/droplang
+/usr/bin/pg_restore
+/usr/bin/createlang
+/usr/bin/pg_dump
+/usr/bin/dropdb
+/usr/bin/createdb
+/usr/bin/ecpg
+#
+# slot
+#
+SHORTSLOT=`echo -n ${SLOT} | sed 's/\.//g'`
+#
+/usr/bin/vacuumlo${SHORTSLOT}
+/usr/bin/pgbench${SHORTSLOT}
+/usr/bin/oid2name${SHORTSLOT}
+/usr/bin/reindexdb${SHORTSLOT}
+/usr/bin/vacuumdb${SHORTSLOT}
+/usr/bin/clusterdb${SHORTSLOT}
+/usr/bin/pg_config${SHORTSLOT}
+/usr/bin/dropuser${SHORTSLOT}
+/usr/bin/psql${SHORTSLOT}
+/usr/bin/createuser${SHORTSLOT}
+/usr/bin/pg_dumpall${SHORTSLOT}
+/usr/bin/droplang${SHORTSLOT}
+/usr/bin/pg_restore${SHORTSLOT}
+/usr/bin/createlang${SHORTSLOT}
+/usr/bin/pg_dump${SHORTSLOT}
+/usr/bin/dropdb${SHORTSLOT}
+/usr/bin/createdb${SHORTSLOT}
+/usr/bin/ecpg${SHORTSLOT}
