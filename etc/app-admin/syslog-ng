@@ -1,3 +1,6 @@
 echo /var/run/syslog-ng.pid
 echo /var/lib/syslog-ng.persist
-lsof -Fn +D /var/log/ -a -p $(pidof syslog-ng) | sed 's/^n//;tn;d;:n'
+#
+SYSLOGNGPID=`/bin/pidof syslog-ng | cut -f1 -d' '`
+lsof -Fn +D /var/log/ -a -p ${SYSLOGNGPID} | sed 's/^n//;tn;d;:n'
+
