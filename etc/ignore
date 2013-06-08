@@ -6,6 +6,7 @@ echo /media
 echo /mnt
 echo /proc
 echo /root
+echo /run
 echo /sys
 echo /tmp
 echo /usr/local
@@ -27,5 +28,5 @@ echo ${CCACHE_DIR%/}
 echo /var/cache/edb
 echo /var/db/pkg
 
-# ignore findcruft cofnig dir
+# ignore findcruft config dir
 echo ${FINDCRUFT_CONFDIR}
