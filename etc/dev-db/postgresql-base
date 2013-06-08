@@ -1,43 +1,43 @@
 cruftdir /var/lib/postgresql
 #
-/usr/bin/vacuumlo
-/usr/bin/pgbench
-/usr/bin/oid2name
-/usr/bin/reindexdb
-/usr/bin/vacuumdb
-/usr/bin/clusterdb
-/usr/bin/pg_config
-/usr/bin/dropuser
-/usr/bin/psql
-/usr/bin/createuser
-/usr/bin/pg_dumpall
-/usr/bin/droplang
-/usr/bin/pg_restore
-/usr/bin/createlang
-/usr/bin/pg_dump
-/usr/bin/dropdb
-/usr/bin/createdb
-/usr/bin/ecpg
+echo /usr/bin/vacuumlo
+echo /usr/bin/pgbench
+echo /usr/bin/oid2name
+echo /usr/bin/reindexdb
+echo /usr/bin/vacuumdb
+echo /usr/bin/clusterdb
+echo /usr/bin/pg_config
+echo /usr/bin/dropuser
+echo /usr/bin/psql
+echo /usr/bin/createuser
+echo /usr/bin/pg_dumpall
+echo /usr/bin/droplang
+echo /usr/bin/pg_restore
+echo /usr/bin/createlang
+echo /usr/bin/pg_dump
+echo /usr/bin/dropdb
+echo /usr/bin/createdb
+echo /usr/bin/ecpg
 #
 # slot
 #
 SHORTSLOT=`echo -n ${SLOT} | sed 's/\.//g'`
 #
-/usr/bin/vacuumlo${SHORTSLOT}
-/usr/bin/pgbench${SHORTSLOT}
-/usr/bin/oid2name${SHORTSLOT}
-/usr/bin/reindexdb${SHORTSLOT}
-/usr/bin/vacuumdb${SHORTSLOT}
-/usr/bin/clusterdb${SHORTSLOT}
-/usr/bin/pg_config${SHORTSLOT}
-/usr/bin/dropuser${SHORTSLOT}
-/usr/bin/psql${SHORTSLOT}
-/usr/bin/createuser${SHORTSLOT}
-/usr/bin/pg_dumpall${SHORTSLOT}
-/usr/bin/droplang${SHORTSLOT}
-/usr/bin/pg_restore${SHORTSLOT}
-/usr/bin/createlang${SHORTSLOT}
-/usr/bin/pg_dump${SHORTSLOT}
-/usr/bin/dropdb${SHORTSLOT}
-/usr/bin/createdb${SHORTSLOT}
-/usr/bin/ecpg${SHORTSLOT}
+echo /usr/bin/vacuumlo${SHORTSLOT}
+echo /usr/bin/pgbench${SHORTSLOT}
+echo /usr/bin/oid2name${SHORTSLOT}
+echo /usr/bin/reindexdb${SHORTSLOT}
+echo /usr/bin/vacuumdb${SHORTSLOT}
+echo /usr/bin/clusterdb${SHORTSLOT}
+echo /usr/bin/pg_config${SHORTSLOT}
+echo /usr/bin/dropuser${SHORTSLOT}
+echo /usr/bin/psql${SHORTSLOT}
+echo /usr/bin/createuser${SHORTSLOT}
+echo /usr/bin/pg_dumpall${SHORTSLOT}
+echo /usr/bin/droplang${SHORTSLOT}
+echo /usr/bin/pg_restore${SHORTSLOT}
+echo /usr/bin/createlang${SHORTSLOT}
+echo /usr/bin/pg_dump${SHORTSLOT}
+echo /usr/bin/dropdb${SHORTSLOT}
+echo /usr/bin/createdb${SHORTSLOT}
+echo /usr/bin/ecpg${SHORTSLOT}
