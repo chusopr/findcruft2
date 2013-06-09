@@ -1,0 +1,3 @@
+echo /usr/bin/corelist
+echo /usr/share/man/man1/corelist.1.bz2
+

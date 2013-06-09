@@ -5,6 +5,7 @@ echo /usr/bin/addr2line
 echo /usr/bin/ar
 echo /usr/bin/as
 echo /usr/bin/c++filt
+echo /usr/bin/coffdump
 echo /usr/bin/dlltool
 echo /usr/bin/dllwrap
 echo /usr/bin/elfedit
@@ -30,6 +31,7 @@ cruftfile "/usr/bin/.*-.*-.*-.*-addr2line"
 cruftfile "/usr/bin/.*-.*-.*-.*-ar"
 cruftfile "/usr/bin/.*-.*-.*-.*-as"
 cruftfile "/usr/bin/.*-.*-.*-.*-c++filt"
+cruftfile "/usr/bin/.*-.*-.*-.*-coffdump"
 cruftfile "/usr/bin/.*-.*-.*-.*-dlltool"
 cruftfile "/usr/bin/.*-.*-.*-.*-dllwrap"
 cruftfile "/usr/bin/.*-.*-.*-.*-elfedit"

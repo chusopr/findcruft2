@@ -1,0 +1,3 @@
+echo /usr/bin/shasum 
+echo /usr/share/man/man1/shasum.1.bz2
+

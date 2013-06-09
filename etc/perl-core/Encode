@@ -1,0 +1,5 @@
+echo /usr/bin/enc2xs
+echo /usr/share/man/man1/enc2xs.1.bz2
+echo /usr/bin/piconv
+echo /usr/share/man/man1/piconv.1.bz2
+

@@ -7,6 +7,8 @@ fi
 cruftdir /etc/env.d/gcc/
 #
 echo /lib/cpp
+#
+echo /usr/bin/aot-compile
 echo /usr/bin/c89
 echo /usr/bin/c99
 echo /usr/bin/cc
