@@ -1,37 +1,45 @@
 echo /usr/lib/libperl.so
-cruftfile "/usr/lib/perl5/${PV}/.*/Encode/ConfigLocal.pm"
+cruftfile "/usr/lib/perl5/${PV}/.*/Encode/ConfigLocal\.pm"
 #
 ###################################################
 # hmmm: output not correct in my env ....
 cruftdir $(perl -e 'use Config; print $Config{installsitearch};')
 #
 # only the .ph-files
-echo /usr/lib*/perl5/*/*/*.ph
-echo /usr/lib*/perl5/*/*/*/*.ph
+cruftfile "/usr/lib/perl5/${PV}/.*\.ph"
+cruftfile "/usr/lib/perl5/${PV}/.*/.*\.ph"
+cruftfile "/usr/lib/perl5/${PV}/.*/.*/.*\.ph"
+#
+cruftonlydir "/usr/lib/perl5/${PV}/.*/asm"
+cruftonlydir "/usr/lib/perl5/${PV}/.*/asm-generic"
+cruftonlydir "/usr/lib/perl5/${PV}/.*/bits"
+cruftonlydir "/usr/lib/perl5/${PV}/.*/gnu"
+cruftonlydir "/usr/lib/perl5/${PV}/.*/machine"
+cruftonlydir "/usr/lib/perl5/${PV}/.*/sys"
 #
 ###################################################
 #
 echo /usr/bin/podchecker
-echo /usr/share/man/man1/podchecker.1.bz2
+cruftfile "/usr/share/man/man1/podchecker\.1\..*"
 echo /usr/bin/pod2usage
-echo /usr/share/man/man1/pod2usage.1.bz2
+cruftfile "/usr/share/man/man1/pod2usage\.1\..*"
 echo /usr/bin/cpan
-echo /usr/share/man/man1/cpan.1.bz2
+cruftfile "/usr/share/man/man1/cpan\.1\..*"
 echo /usr/bin/cpan2dist  
-echo /usr/share/man/man1/cpan2dist.1.bz2
+cruftfile "/usr/share/man/man1/cpan2dist\.1\.*"
 echo /usr/bin/cpanp
-echo /usr/share/man/man1/cpanp.1.bz2
+cruftfile "/usr/share/man/man1/cpanp\.1\..*"
 echo /usr/bin/cpanp-run-perl
 
 echo /usr/bin/pod2man
-echo /usr/share/man/man1/pod2man.1.bz2
+cruftfile "/usr/share/man/man1/pod2man\.1\..*"
 echo /usr/bin/pod2text
-echo /usr/share/man/man1/pod2text.1.bz2
+cruftfile "/usr/share/man/man1/pod2text\.1\..*"
 
 echo /usr/bin/xsubpp
-echo /usr/share/man/man1/xsubpp.1.bz2
+cruftfile "/usr/share/man/man1/xsubpp\.1\..*"
 echo /usr/bin/perldoc
-echo /usr/share/man/man1/perldoc.1.bz2
+cruftfile "/usr/share/man/man1/perldoc\.1\..*"
 
-echo echo /usr/share/man/man1/perlpodstyle.1.bz2
+cruftfile "/usr/share/man/man1/perlpodstyle\.1\..*"
 

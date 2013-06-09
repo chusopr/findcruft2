@@ -1,7 +1,6 @@
 echo /usr/bin/ptargrep
-echo /usr/share/man/man1/ptargrep.1.bz2
+cruftfile "/usr/share/man/man1/ptargrep\.1\..*"
 echo /usr/bin/ptardiff
-echo /usr/share/man/man1/ptardiff.1.bz2
+cruftfile "/usr/share/man/man1/ptardiff\.1\..*"
 echo /usr/bin/ptar
-echo /usr/share/man/man1/ptar.1.bz2
-
+cruftfile "/usr/share/man/man1/ptar\.1\..*"

@@ -1,2 +1,2 @@
-echo /usr/share/man/man1/config_data.1.bz2
+cruftfile "/usr/share/man/man1/config_data\.1\..*"
 echo /usr/bin/config_data

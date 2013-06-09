@@ -1,3 +1,2 @@
 echo /usr/bin/podselect
-echo /usr/share/man/man1/podselect.1.bz2
-
+cruftfile "/usr/share/man/man1/podselect\.1\..*"

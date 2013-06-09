@@ -5,4 +5,4 @@ echo /usr/bin/rdoc
 echo /usr/bin/ri
 echo /usr/bin/testrb
 #
-cruftfile  "/usr/share/man/man1/ruby.1.*"
+cruftfile  "/usr/share/man/man1/ruby\.1\..*"

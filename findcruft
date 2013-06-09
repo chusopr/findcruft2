@@ -91,10 +91,11 @@ The other files are expected to output a list of false positive
 files one file per line onto ${BL}stdout${NO}. So, if you want to ignore
 a single file you can just do ${RD}echo /full/path/to/file${NO}. You can
 use the predefined functions ${RD}cruftfile /full/path/file_regexp${NO} and
-${RD}cruftdir /full/path/dir_regexp${NO}, which do a grep on the unmanaged
-files and ignore all files matching the given regexp or all
-directories matching the regexp and their contents, respectively.
-Look into the included files for more elaborated examples.
+${RD}cruftdir /full/path/dir_regexp${NO}, ${RD}cruftonlydir /full/path/dir_regexp${NO}, 
+which do a grep on the unmanaged files and ignore all files matching the given regexp
+or all directories matching the regexp and their contents (or without
+their contents), respectively. Look into the included files for more elaborated
+examples.
 
 You can also use the functions from the file ${BL}functions${NO} in these
 rule files:

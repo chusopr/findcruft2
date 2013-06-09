@@ -6,5 +6,5 @@ echo /usr/bin/python3
 echo /usr/bin/pydoc
 echo /usr/bin/2to3
 #
-cruftfile "/usr/share/man/man1/python.1.*"
+cruftfile "/usr/share/man/man1/python\.1\..*"
 
