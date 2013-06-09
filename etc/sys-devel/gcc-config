@@ -43,6 +43,8 @@ echo /usr/bin/gtnameserv
 echo /usr/bin/jcf-dump
 echo /usr/bin/rebuild-gcj-db
 #
+echo /usr/bin/jv-convert
+#
 cruftfile "/usr/bin/.*-.*-.*-.*-aot-compile"
 cruftfile "/usr/bin/.*-.*-.*-.*-c++"
 cruftfile "/usr/bin/.*-.*-.*-.*-cpp"
