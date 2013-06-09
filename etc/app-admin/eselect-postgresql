@@ -4,4 +4,5 @@ echo /etc/eselect/postgresql/active
 echo /usr/include/postgresql
 echo /usr/include/postgres_ext.h
 #
+#
 cruftfile "/etc/eselect/postgresql/active\.links.*"

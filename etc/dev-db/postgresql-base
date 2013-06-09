@@ -1,3 +1,19 @@
+#
+cruftfile "/usr/lib/libecpg\.a"
+cruftfile "/usr/lib/libecpg\.so"
+cruftfile "/usr/lib/libecpg\.so\..*"
+cruftfile "/usr/lib/libecpg_compat\.a"
+cruftfile "/usr/lib/libecpg_compat\.so"
+cruftfile "/usr/lib/libecpg_compat\.so\..*"
+cruftfile "/usr/lib/libpq\.a"
+cruftfile "/usr/lib/libpq\.so"
+cruftfile "/usr/lib/libpq\.so\..*"
+cruftfile "/usr/lib/libpqwalreceiver\.so"
+cruftfile "/usr/lib/libpgport\.a"
+cruftfile "/usr/lib/libpgtypes\.a"
+cruftfile "/usr/lib/libpgtypes\.so"
+cruftfile "/usr/lib/libpgtypes\.so\..*"
+#
 cruftdir /var/lib/postgresql
 #
 echo /usr/bin/vacuumlo
