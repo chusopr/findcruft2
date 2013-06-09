@@ -1,1 +1,2 @@
+echo /var/log/genkernel.log
 cruftonlydir /etc/kernels
