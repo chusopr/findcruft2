@@ -27,7 +27,7 @@ cruftfile "/usr/share/man/man1/pod2usage\.1\..*"
 echo /usr/bin/cpan
 cruftfile "/usr/share/man/man1/cpan\.1\..*"
 echo /usr/bin/cpan2dist  
-cruftfile "/usr/share/man/man1/cpan2dist\.1\.*"
+cruftfile "/usr/share/man/man1/cpan2dist\.1\..*"
 echo /usr/bin/cpanp
 cruftfile "/usr/share/man/man1/cpanp\.1\..*"
 echo /usr/bin/cpanp-run-perl
