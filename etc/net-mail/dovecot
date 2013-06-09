@@ -1,0 +1,3 @@
+echo /etc/ssl/dovecot/server.key
+echo /etc/ssl/dovecot/server.pem
+cruftonlydir /etc/ssl/dovecot

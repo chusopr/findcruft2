@@ -2,8 +2,11 @@ echo /.rnd
 echo /etc/.pwd.lock
 [[ -d /proc/asound ]] && echo /etc/asound.state
 echo /etc/hosts
-echo /etc/ld.so.cache
-echo /etc/ld.so.conf
+
+# belongs to glibc
+#echo /etc/ld.so.cache
+#echo /etc/ld.so.conf
+
 echo /etc/localtime
 echo /etc/mtab
 echo /etc/resolv.conf
