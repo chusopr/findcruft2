@@ -9,4 +9,5 @@ echo /var/run/nscd/socket
 echo /etc/ld.so.cache
 echo /etc/ld.so.conf
 cruftonlydir /etc/ld.so.conf.d
+cruftdir /var/cache/ldconfig
 #

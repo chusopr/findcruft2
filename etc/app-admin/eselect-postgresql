@@ -1,2 +1,3 @@
+echo /usr/share/postgresql
 echo /etc/eselect/postgresql/active
 cruftfile "/etc/eselect/postgresql/active.links.*"
