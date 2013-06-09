@@ -47,7 +47,7 @@ cruftfile "/usr/bin/.*-.*-.*-.*-cpp"
 cruftfile "/usr/bin/.*-.*-.*-.*-g++"
 cruftfile "/usr/bin/.*-.*-.*-.*-g77"
 cruftfile "/usr/bin/.*-.*-.*-.*-gappletviewer"
-cruftfile "/usr/bin/.*-.*-.*-.*-gc-analyze
+cruftfile "/usr/bin/.*-.*-.*-.*-gc-analyze"
 cruftfile "/usr/bin/.*-.*-.*-.*-gcc"
 cruftfile "/usr/bin/.*-.*-.*-.*-gcc-ar"
 cruftfile "/usr/bin/.*-.*-.*-.*-gcc-nm"
