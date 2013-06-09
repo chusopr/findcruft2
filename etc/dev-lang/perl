@@ -14,6 +14,7 @@ cruftonlydir "/usr/lib/perl5/${PV}/.*/asm"
 cruftonlydir "/usr/lib/perl5/${PV}/.*/asm-generic"
 cruftonlydir "/usr/lib/perl5/${PV}/.*/bits"
 cruftonlydir "/usr/lib/perl5/${PV}/.*/gnu"
+cruftonlydir "/usr/lib/perl5/${PV}/.*/linux"
 cruftonlydir "/usr/lib/perl5/${PV}/.*/machine"
 cruftonlydir "/usr/lib/perl5/${PV}/.*/sys"
 #
