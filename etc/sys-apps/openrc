@@ -1,8 +1,11 @@
 [[ -L /etc/runlevels/boot/hwclock ]] && echo /etc/adjtime
 echo /etc/conf.d/net
+#
 cruftfile "/etc/init.d/net\..*"
 cruftdir /etc/runlevels
 cruftdir /lib/rc/init.d
 cruftdir /lib/rc/cache
 cruftdir /lib/rc/console
+#
 echo /var/log/dmesg
+echo /var/log/rc.log

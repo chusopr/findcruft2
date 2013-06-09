@@ -1,0 +1,4 @@
+echo /usr/bin/b2m
+echo /usr/bin/etags
+#
+cruftfile "/usr/share/man/man1/etags.1\..*"
