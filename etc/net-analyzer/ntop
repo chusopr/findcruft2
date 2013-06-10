@@ -1,0 +1,3 @@
+echo /var/lib/ntop/ntop_pw.db
+echo /var/lib/ntop/prefsCache.db
+
