@@ -1,1 +1,5 @@
-echo /usr/lib/libXvMCNVIDIA_dynamic.so.1
+cruftfile "/usr/lib/libXvMCNVIDIA_dynamic\.so\..*"
+cruftfile "/usr/lib64/libOpenCL\.so.*"
+#
+# include files
+
