@@ -12,3 +12,7 @@ cruftfile "/usr/lib/libdb_sql\.so"
 cruftfile "/usr/lib/libdb_stl\.a"
 cruftfile "/usr/lib/libdb_stl\.so"
 #
+# java
+cruftfile "/usr/lib/libdb_java\.a"
+cruftfile "/usr/lib/libdb_java\.so"
+#
