@@ -1,2 +1,6 @@
 echo /usr/lib/dri/swrast_dri.so
+#
+# symlinks /usr/include
+cruftonlydir "/usr/include/KHR"
+echo /usr/include/KHR/khrplatform.h
 

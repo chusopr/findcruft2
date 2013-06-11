@@ -1,6 +1,15 @@
 cruftdir /etc/env.d/binutils
 echo /etc/env.d/05binutils
 #
+# symlinks in /usr/include
+echo /usr/include/demangle.h
+echo /usr/include/dyn-string.h
+echo /usr/include/fibheap.h
+echo /usr/include/hashtab.h
+echo /usr/include/objalloc.h
+echo /usr/include/plugin-api.h
+echo /usr/include/splay-tree.h
+#
 echo /usr/bin/addr2line
 echo /usr/bin/ar
 echo /usr/bin/as
