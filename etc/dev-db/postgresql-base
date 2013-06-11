@@ -1,4 +1,6 @@
 #
+cruftfile "/usr/lib/postgresql"
+#
 cruftfile "/usr/lib/libecpg\.a"
 cruftfile "/usr/lib/libecpg\.so"
 cruftfile "/usr/lib/libecpg\.so\..*"

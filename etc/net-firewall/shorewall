@@ -1,0 +1,16 @@
+echo /var/lib/shorewall/.dynamic
+echo /var/lib/shorewall/.iptables-restore-input
+echo /var/lib/shorewall/.modules
+echo /var/lib/shorewall/.modulesdir
+echo /var/lib/shorewall/.restart
+echo /var/lib/shorewall/.start
+echo /var/lib/shorewall/firewall
+echo /var/lib/shorewall/marks
+echo /var/lib/shorewall/nat
+echo /var/lib/shorewall/policies
+echo /var/lib/shorewall/proxyarp
+echo /var/lib/shorewall/restarted
+echo /var/lib/shorewall/state
+echo /var/lib/shorewall/zones
+#
+echo /var/log/shorewall-init.log
