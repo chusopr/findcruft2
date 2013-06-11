@@ -1,4 +1,6 @@
 #
+cruftfile "/usr/include/pg_config_manual\.h"
+#
 cruftfile "/usr/lib/postgresql"
 #
 cruftfile "/usr/lib/libecpg\.a"
@@ -16,7 +18,7 @@ cruftfile "/usr/lib/libpgtypes\.a"
 cruftfile "/usr/lib/libpgtypes\.so"
 cruftfile "/usr/lib/libpgtypes\.so\..*"
 #
-cruftdir /var/lib/postgresql
+cruftdir "/var/lib/postgresql"
 #
 echo /usr/bin/vacuumlo
 echo /usr/bin/pgbench
