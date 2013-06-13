@@ -13,3 +13,7 @@ for service in /etc/init.d/net.*; do
 	echo /var/lib/dhcpc/dhcpcd-${iface}.info.old
 	echo /var/run/dhcpcd-${iface}.pid
 done
+#
+# created
+echo /etc/dhcpcd.duid
+#
