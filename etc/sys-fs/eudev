@@ -1,1 +1,2 @@
+cruftonlydir "/etc/udev/rules\.d"
 echo /etc/udev/hwdb.bin
