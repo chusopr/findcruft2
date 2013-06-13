@@ -1,0 +1,3 @@
+echo /etc/env.d/alternatives/cblas/_current
+echo /etc/env.d/alternatives/cblas/_current_list
+
