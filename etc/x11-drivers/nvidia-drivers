@@ -2,4 +2,7 @@ cruftfile "/usr/lib/libXvMCNVIDIA_dynamic\.so\..*"
 cruftfile "/usr/lib64/libOpenCL\.so.*"
 #
 # include files
-
+#
+# created by nvidia-settings 
+echo /etc/X11/edid.bin
+#
