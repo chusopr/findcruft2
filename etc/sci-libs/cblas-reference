@@ -1,3 +1,4 @@
 echo /etc/env.d/alternatives/cblas/_current
 echo /etc/env.d/alternatives/cblas/_current_list
-
+#
+echo /usr/lib64/pkgconfig/cblas.pc

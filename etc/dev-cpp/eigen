@@ -1,3 +1,5 @@
 echo /etc/env.d/alternatives/blas/_current
 echo /etc/env.d/alternatives/blas/_current_list
 #
+echo /usr/lib64/pkgconfig/blas.pc
+#
