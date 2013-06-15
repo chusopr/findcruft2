@@ -23,3 +23,16 @@ for package in /usr/share/mime/packages/*.xml; do
 	s!.*<mime-type[[:space:]]\+type='\([^']*\)'>.*!/usr/share/mime/\1.xml!
 	t;d" ${package}
 done
+
+#
+echo /usr/share/mime/application/x-turtle.xml
+#
+echo /usr/share/mime/generic-icons
+echo /usr/share/mime/globs2
+echo /usr/share/mime/icons
+echo /usr/share/mime/treemagic
+echo /usr/share/mime/types
+echo /usr/share/mime/version
+#
+cruftonlydir "/usr/share/mime/x-content"
+#
