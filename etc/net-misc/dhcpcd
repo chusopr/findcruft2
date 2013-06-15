@@ -9,7 +9,8 @@ echo /var/lib/dhcpc
 for service in /etc/init.d/net.*; do
 	iface=${service##*.}
 	echo /var/cache/dhcpcd-${iface}.cache
-	echo /var/lib/dhcpc/dhcpcd-${iface}.info
+	echo /var/lib/dhcpcd/dhcpcd-${iface}.lease
+        echo /var/lib/dhcpc/dhcpcd-${iface}.info
 	echo /var/lib/dhcpc/dhcpcd-${iface}.info.old
 	echo /var/run/dhcpcd-${iface}.pid
 done
