@@ -44,3 +44,8 @@ cruftfile "/usr/share/man/man1/perldoc\.1\..*"
 
 cruftfile "/usr/share/man/man1/perlpodstyle\.1\..*"
 
+####################################################
+# belongs to dev-perl/XML-SAX but we need ${PV}
+#
+cruftfile "/usr/lib/perl5/vendor_perl/${PV}/XML/SAX/ParserDetails\.ini"
+#
