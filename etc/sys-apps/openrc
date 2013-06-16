@@ -2,10 +2,14 @@
 echo /etc/conf.d/net
 #
 cruftfile "/etc/init.d/net\..*"
-cruftdir /etc/runlevels
-cruftdir /lib/rc/init.d
-cruftdir /lib/rc/cache
-cruftdir /lib/rc/console
+cruftdir "/etc/runlevels"
+cruftdir "/lib/rc/init\.d"
+cruftdir "/lib/rc/cache"
+cruftdir "/lib/rc/console"
 #
 echo /var/log/dmesg
 echo /var/log/rc.log
+#
+# openrc local start dir
+cruftdir "/etc/local\.d"
+# 
