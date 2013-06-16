@@ -39,6 +39,9 @@ echo /usr/bin/dropdb
 echo /usr/bin/createdb
 echo /usr/bin/ecpg
 #
+# env.d stuff
+cruftfile "/etc/env\.d/.*postgresql"
+# 
 # slot
 #
 SHORTSLOT=`echo -n ${SLOT} | sed 's/\.//g'`
