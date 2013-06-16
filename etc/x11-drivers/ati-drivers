@@ -1,3 +1,5 @@
 echo /etc/ati/amdpcsdb
 #
-
+cruftfile "/usr/lib/libamdocl64\.so"
+cruftfile "/usr/lib64/libOpenCL\.so\..*"
+cruftfile "/usr/lib64/libOpenCL\.so"
