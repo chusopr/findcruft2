@@ -8,3 +8,8 @@ cruftfile "/usr/lib64/libOpenCL\.so"
 cruftfile " /usr/include/GLES"
 cruftfile " /usr/include/GLES2"
 cruftfile " /usr/include/GLES3"
+#
+# because of linux-mod.eclass
+cruftonlydir "/var/lib/module-rebuild"
+cruftfile "/var/lib/module-rebuild/moduledb"
+
