@@ -1,5 +1,8 @@
-echo /usr/bin/eplain
+# some symlinks (aleph)
+cruftfile "/usr/bin/lamed"
 #
+# some symlinks (pdfetex)
+cruftfile "/usr/bin/eplain"
 #
 # created files (via /usr/sbin/texmf-update)
 cruftfile "/etc/texmf/ls-R"
@@ -13,4 +16,3 @@ cruftfile "/usr/share/texmf-doc/ls-R"
 cruftfile "/usr/share/texmf-site/ls-R"
 cruftfile "/usr/share/texmf/ls-R"
 #
-
