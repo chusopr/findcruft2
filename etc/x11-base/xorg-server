@@ -1,5 +1,12 @@
+# config file
 echo /etc/X11/xorg.conf
+#
+# old bin dir 
+cruftfile "/usr/bin/X11"
+#
+# logging
 cruftfile "/var/log/Xorg\..*\.log"
 cruftfile "/var/log/Xorg\..*\.log\.old"
+#
 cruftdir "/var/run/xauth"
 
