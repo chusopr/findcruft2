@@ -12,6 +12,7 @@ echo /usr/bin/msfrpc
 echo /usr/bin/msfrpcd
 echo /usr/bin/msfupdate
 echo /usr/bin/msfvenom
+echo /usr/bin/msfgui
 #
 cruftfile "/usr/lib.*/metasploit" 
 #
