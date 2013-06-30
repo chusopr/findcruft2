@@ -12,4 +12,7 @@ echo /var/log/rc.log
 #
 # openrc local start dir
 cruftdir "/etc/local\.d"
+#
+# /etc/conf.d/urandom:5:urandom_seed="/var/lib/misc/random-seed"
+cruftfile "/var/lib/misc/random-seed"
 # 

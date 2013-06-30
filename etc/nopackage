@@ -15,7 +15,6 @@ echo /etc/resolv.conf
 echo /var/log/lastlog
 echo /var/log/wtmp
 echo /var/run/utmp
-echo /var/run/random-seed
 
 # modules and sources for kernel versions
 echo /usr/src/linux
