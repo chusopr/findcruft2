@@ -1,1 +1,6 @@
-cruftfile "/var/lib/preload/preload.state"
+#
+cruftfile "/var/lib/preload/preload\.state"
+#
+# from: /etc/conf.d/preload
+cruftfile "/var/log/preload\.log"
+#
