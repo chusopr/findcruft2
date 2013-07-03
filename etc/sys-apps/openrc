@@ -3,7 +3,10 @@ echo /etc/conf.d/net
 #
 cruftfile "/etc/init.d/net\..*"
 cruftdir "/etc/runlevels"
-cruftdir "/lib/rc/init\.d"
+#
+# is now under /var/run/openrc
+#cruftdir "/lib/rc/init\.d"
+#
 cruftdir "/lib/rc/cache"
 cruftdir "/lib/rc/console"
 #
