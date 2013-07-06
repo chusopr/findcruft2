@@ -14,3 +14,8 @@ echo /usr/include/EGL/eglplatform.h
 cruftfile "/usr/lib/libEGL\.so.*"
 cruftfile "/usr/lib/libGL\.so.*"
 #
+# symlinks
+cruftfile "/usr/lib/dri/r300_dri\.so"
+cruftfile "/usr/lib/dri/r600_dri\.so"
+# 
+#
