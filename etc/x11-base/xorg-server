@@ -9,4 +9,11 @@ cruftfile "/var/log/Xorg\..*\.log"
 cruftfile "/var/log/Xorg\..*\.log\.old"
 #
 cruftdir "/var/run/xauth"
+#
+# opengl directories, created but empty
+cruftonlydir "/usr/include/GLES"
+cruftonlydir "/usr/include/GLES2"
+cruftonlydir "/usr/include/GLES3"
+cruftonlydir "/usr/include/VG"
+
 
