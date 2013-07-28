@@ -9,3 +9,6 @@ echo /var/lib/ntop/topTalkers.db
 #
 echo /var/lib/ntop/GeoIPASNum.dat.gz
 echo /var/lib/ntop/GeoLiteCity.dat.gz
+cruftfile "/var/lib/ntop/GeoIPASNum\.dat"
+cruftfile "/var/lib/ntop/GeoLiteCity\.dat"
+
