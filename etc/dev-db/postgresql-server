@@ -30,3 +30,5 @@ echo /usr/bin/pg_ctl${SHORTSLOT}
 echo /usr/bin/postmaster${SHORTSLOT}
 echo /usr/bin/postgres${SHORTSLOT}
 #
+echo  /usr/bin/pg_xlogdump93
+#
