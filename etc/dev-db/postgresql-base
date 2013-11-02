@@ -38,7 +38,8 @@ echo /usr/bin/pg_dump
 echo /usr/bin/dropdb
 echo /usr/bin/createdb
 echo /usr/bin/ecpg
-echo /usr/bin/pg_isready93
+echo /usr/bin/pg_isready
+echo /usr/bin/pg_xlogdump
 #
 # env.d stuff
 cruftfile "/etc/env\.d/.*postgresql"
@@ -65,4 +66,5 @@ echo /usr/bin/pg_dump${SHORTSLOT}
 echo /usr/bin/dropdb${SHORTSLOT}
 echo /usr/bin/createdb${SHORTSLOT}
 echo /usr/bin/ecpg${SHORTSLOT}
+echo /usr/bin/pg_isready${SHORTSLOT}
 #
