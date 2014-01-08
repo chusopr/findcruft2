@@ -17,6 +17,7 @@ echo /usr/bin/c++filt
 echo /usr/bin/coffdump
 echo /usr/bin/dlltool
 echo /usr/bin/dllwrap
+echo /usr/bin/dwp
 echo /usr/bin/elfedit
 echo /usr/bin/gprof
 echo /usr/bin/ld
@@ -43,6 +44,7 @@ cruftfile "/usr/bin/.*-.*-.*-.*-c++filt"
 cruftfile "/usr/bin/.*-.*-.*-.*-coffdump"
 cruftfile "/usr/bin/.*-.*-.*-.*-dlltool"
 cruftfile "/usr/bin/.*-.*-.*-.*-dllwrap"
+cruftfile "/usr/bin/.*-.*-.*-.*-dwp"
 cruftfile "/usr/bin/.*-.*-.*-.*-elfedit"
 cruftfile "/usr/bin/.*-.*-.*-.*-gprof"
 cruftfile "/usr/bin/.*-.*-.*-.*-ld"
