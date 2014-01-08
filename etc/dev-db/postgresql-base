@@ -1,5 +1,6 @@
 #
 cruftfile "/usr/include/pg_config_manual\.h"
+cruftfile "/usr/include/pg_config_ext\.h"
 #
 cruftfile "/usr/lib/postgresql"
 #
