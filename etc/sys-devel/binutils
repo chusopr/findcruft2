@@ -10,6 +10,8 @@ echo /usr/include/objalloc.h
 echo /usr/include/plugin-api.h
 echo /usr/include/splay-tree.h
 #
+echo /usr/include/libiberty
+#
 echo /usr/bin/addr2line
 echo /usr/bin/ar
 echo /usr/bin/as
