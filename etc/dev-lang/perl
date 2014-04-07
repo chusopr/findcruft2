@@ -47,6 +47,9 @@ cruftfile "/usr/share/man/man1/perlpodstyle\.1\..*"
 echo /usr/bin/podselect
 cruftfile "/usr/share/man/man1/podselect\.1\..*"
 
+echo /usr/bin/corelist
+cruftfile "/usr/share/man/man1/corelist\.1\..*"
+
 ####################################################
 # belongs to dev-perl/XML-SAX but we need ${PV}
 #
