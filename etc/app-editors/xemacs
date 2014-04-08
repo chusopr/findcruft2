@@ -4,7 +4,7 @@ echo /usr/bin/etags
 cruftfile "/usr/share/man/man1/etags\.1\..*"
 #
 cruftfile "/usr/share/man/man1/ctags\.1"
-cruftfile "/usr/share/man/man1/gnuattach.\1"
+cruftfile "/usr/share/man/man1/gnuattach\.1"
 cruftfile "/usr/share/man/man1/gnuclient\.1"
 cruftfile "/usr/share/man/man1/gnudoit\.1"
 #
