@@ -5,6 +5,7 @@ echo /usr/bin/pg_standby
 echo /usr/bin/pg_archivecleanup
 echo /usr/bin/pg_receivexlog
 echo /usr/bin/pg_basebackup
+echo /usr/bin/pg_recvlogical
 echo /usr/bin/pg_resetxlog
 echo /usr/bin/pg_controldata
 echo /usr/bin/initdb
@@ -25,6 +26,8 @@ echo /usr/bin/pg_receivexlog${SHORTSLOT}
 echo /usr/bin/pg_basebackup${SHORTSLOT}
 echo /usr/bin/pg_resetxlog${SHORTSLOT}
 echo /usr/bin/pg_controldata${SHORTSLOT}
+echo /usr/bin/pg_recvlogical${SHORTSLOT}
+echo /usr/bin/pg_xlogdump${SHORTSLOT}
 echo /usr/bin/initdb${SHORTSLOT}
 echo /usr/bin/pg_ctl${SHORTSLOT}
 echo /usr/bin/postmaster${SHORTSLOT}
