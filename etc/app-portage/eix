@@ -1,4 +1,4 @@
-cruftdir /var/cache/eix
+cruftonlydir /var/cache/eix
 echo /var/cache/eix/portage.eix
 echo /var/cache/eix/previous.eix
 #
