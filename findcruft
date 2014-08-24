@@ -163,7 +163,7 @@ generate_symlink()
 		done
 
 		source "${FINDCRUFT_CONFDIR}"/symlink.local \
-		| while read symlink; do
+		| while read symlink target; do
 			SYMLINK_CACHE="${SYMLINK_CACHE}s:^${target%/}/:${symlink%/}/:;"
 		done
 	fi
