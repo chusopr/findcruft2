@@ -154,21 +154,23 @@ generate_ignore()
 	done
 }
 
+
+generate_symlink_cache()
+{
+	source "${FINDCRUFT_CONFDIR}"/symlink \
+	| while read symlink target; do
+		echo -n "s:^${target%/}/:${symlink%/}/:;"
+	done
+
+	source "${FINDCRUFT_CONFDIR}"/symlink.local \
+	| while read symlink target; do
+        	echo -n "s:^${target%/}/:${symlink%/}/:;"
+        done
+}
+
 generate_symlink()
 {
-	if [[ -z "${SYMLINK_CACHE}" ]]; then
-		source "${FINDCRUFT_CONFDIR}"/symlink \
-		| while read symlink target; do
-			SYMLINK_CACHE="${SYMLINK_CACHE}s:^${target%/}/:${symlink%/}/:;"
-		done
-
-		source "${FINDCRUFT_CONFDIR}"/symlink.local \
-		| while read symlink target; do
-			SYMLINK_CACHE="${SYMLINK_CACHE}s:^${target%/}/:${symlink%/}/:;"
-		done
-	fi
-
-	echo -n "${SYMLINK_CACHE}"
+        echo -n "${SYMLINK_CACHE}"
 }
 
 multilib_sed()
@@ -190,7 +192,9 @@ collect_all()
 		find_arg=$(echo "${ignore}" | xargs -n1 echo -or -path)
 	fi
 
-	find / '(' -false ${find_arg} ')' -prune -or -print | multilib_sed
+	find / '(' -false ${find_arg} ')' -prune -or -print \
+        | sed -e "$(generate_symlink)" \
+        | multilib_sed
 }
 
 collect_portage()
@@ -212,7 +216,7 @@ collect_unmanaged()
 	local allfiles=$(mktemp)
 	local portfiles=$(mktemp)
 
-	collect_all | sort -u > ${allfiles}
+        collect_all | sort -u > ${allfiles}
 	collect_portage | sort -u > ${portfiles}
 
 	log "Collecting unmanaged files ..."
@@ -302,5 +306,7 @@ PORTAGE_TMPDIR=$(portageq envvar PORTAGE_TMPDIR)
 PORTDIR=$(portageq portdir)
 PORTDIR_OVERLAY=$(portageq portdir_overlay)
 PORT_LOGDIR=$(portageq envvar PORT_LOGDIR)
+
+SYMLINK_CACHE=$(generate_symlink_cache)
 
 collect_cruft
