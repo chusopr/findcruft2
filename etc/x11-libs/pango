@@ -3,4 +3,4 @@ echo /etc/pango/pango.modules
 cruftfile "/etc/pango/.*-.*-.*-.*/pango\.modules"
 #
 # 
-cruftfile "/usr/lib/pango/.*\..*/modules
+cruftfile "/usr/lib/pango/.*\..*/modules\.cache"
