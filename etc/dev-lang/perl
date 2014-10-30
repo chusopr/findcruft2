@@ -55,6 +55,28 @@ cruftfile "/usr/share/man/man1/zipdetails\.1\..*"
 echo /usr/bin/json_pp
 cruftfile "/usr/share/man/man1/json_pp\.1\..*"
 
+# perl-5.20 
+echo /usr/bin/ptar
+cruftfile "/usr/share/man/man1/ptar\.1\..*z2"
+echo /usr/bin/ptardiff
+cruftfile "/usr/share/man/man1/ptardiff\.1\..*"
+echo /usr/bin/ptargrep
+cruftfile "/usr/share/man/man1/ptargrep\.1\..*"
+echo /usr/bin/config_data
+cruftfile "/usr/share/man/man1/config_data\.1\..*"
+echo /usr/bin/enc2xs
+cruftfile "/usr/share/man/man1/enc2xs\.1\..*"
+echo /usr/bin/instmodsh
+cruftfile "/usr/share/man/man1/instmodsh\.1\..*"
+echo /usr/bin/piconv
+cruftfile "/usr/share/man/man1/piconv\.1\..*" 
+echo /usr/bin/prove
+cruftfile "/usr/share/man/man1/prove\.1\..*"
+echo /usr/bin/shasum
+cruftfile "/usr/share/man/man1/shasum\.1\..*"
+
+
+
 ####################################################
 # belongs to dev-perl/XML-SAX but we need ${PV}
 #
