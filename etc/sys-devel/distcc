@@ -11,7 +11,7 @@ cruftfile "/usr/lib/distcc/bin/.*-.*-.*-.*-cc"
 cruftfile "/usr/lib/distcc/bin/.*-.*-.*-.*-g++"
 cruftfile "/usr/lib/distcc/bin/.*-.*-.*-.*-gcc"
 #
-cruftfile "/usr/lib/distcc/bin/.*-.*-.*-.*-c++-*"
-cruftfile "/usr/lib/distcc/bin/.*-.*-.*-.*-g++-*"
-cruftfile "/usr/lib/distcc/bin/.*-.*-.*-.*-gcc-*"
+cruftfile "/usr/lib/distcc/bin/.*-.*-.*-.*-c++-.*"
+cruftfile "/usr/lib/distcc/bin/.*-.*-.*-.*-g++-.*"
+cruftfile "/usr/lib/distcc/bin/.*-.*-.*-.*-gcc-.*"
 #
