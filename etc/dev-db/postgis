@@ -1,0 +1,4 @@
+#
+echo /usr/bin/pgsql2shp
+echo /usr/bin/raster2pgsql
+echo /usr/bin/shp2pgsql
