@@ -1,3 +1,4 @@
+# alternatives stuff
 echo /etc/env.d/alternatives/blas/_current
 echo /etc/env.d/alternatives/blas/_current_list
 #
