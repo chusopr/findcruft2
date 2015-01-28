@@ -1,8 +1,8 @@
 # alternatives 2 stuff
-echo /etc/env.d/alternatives/blas-int66/_current
+echo /etc/env.d/alternatives/blas-int64/_current
 echo /etc/env.d/alternatives/blas-int64/_current_list
 #
-echo /etc/env.d/alternatives/cblas-int66/_current
+echo /etc/env.d/alternatives/cblas-int64/_current
 echo /etc/env.d/alternatives/cblas-int64/_current_list
 #
 echo /etc/env.d/alternatives/cblas/_current
