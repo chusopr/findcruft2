@@ -1,5 +1,6 @@
 # config file
 echo /etc/X11/xorg.conf
+cruftonlydir "/etc/X11/xorg\.conf\.d"
 #
 # old bin dir 
 cruftfile "/usr/bin/X11"
