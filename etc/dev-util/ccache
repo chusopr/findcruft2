@@ -14,3 +14,6 @@ echo /usr/lib/ccache/bin/gcc
 echo /usr/lib/ccache/bin/clang
 echo /usr/lib/ccache/bin/clang++
 #
+# config
+echo /etc/ccache.conf
+#
