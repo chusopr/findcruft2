@@ -17,5 +17,6 @@ cruftfile "/usr/lib/libGL\.so.*"
 # symlinks
 cruftfile "/usr/lib/dri/r300_dri\.so"
 cruftfile "/usr/lib/dri/r600_dri\.so"
-# 
+cruftfile "/usr/lib/dri/i915_dri\.so"
+cruftfile "/usr/lib/dri/i965_dri\.so"
 #
