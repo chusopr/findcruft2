@@ -1,0 +1,6 @@
+# python symlinks
+echo /usr/bin/2to3
+echo /usr/bin/python3
+#
+#cruftfile "/usr/share/man/man1/python3\.1\..*"
+
