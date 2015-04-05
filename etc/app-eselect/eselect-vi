@@ -1,0 +1,3 @@
+echo /usr/bin/vi
+echo /usr/bin/view
+echo /usr/bin/ex
