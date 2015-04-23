@@ -1,8 +1,10 @@
 echo /etc/ati/amdpcsdb
 #
 cruftfile "/usr/lib/libamdocl64\.so"
-cruftfile "/usr/lib64/libOpenCL\.so\..*"
-cruftfile "/usr/lib64/libOpenCL\.so"
+cruftfile "/usr/lib/libOpenCL\.so\..*"
+cruftfile "/usr/lib/libOpenCL\.so"
+#
+cruftfile "/usr/lib/libamdocl12cl64\.so"
 #
 # includes
 cruftonlydir "/usr/include/GLES"
