@@ -4,3 +4,4 @@ echo /usr/bin/piconv
 cruftfile "/usr/share/man/man1/piconv\.1\..*"
 #
 echo /usr/bin/encguess
+cruftfile "/usr/share/man/man1/encguess\.1\..*"
