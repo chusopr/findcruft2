@@ -5,6 +5,8 @@ cruftfile /var/log/sa/sa04
 cruftfile /var/log/sa/sa05
 cruftfile /var/log/sa/sa06
 cruftfile /var/log/sa/sa07
+cruftfile /var/log/sa/sa08
+cruftfile /var/log/sa/sa09
 cruftfile /var/log/sa/sa31
 cruftfile /var/log/sa/sar01
 cruftfile /var/log/sa/sar02
@@ -13,5 +15,7 @@ cruftfile /var/log/sa/sar04
 cruftfile /var/log/sa/sar05
 cruftfile /var/log/sa/sar06
 cruftfile /var/log/sa/sar07
+cruftfile /var/log/sa/sar08
+cruftfile /var/log/sa/sar09
 cruftfile /var/log/sa/sar30
 
