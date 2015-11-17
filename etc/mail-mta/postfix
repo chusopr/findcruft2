@@ -1,1 +1,4 @@
+# local aliases
+echo /etc/mail/aliases.db
+#
 cruftdir /var/spool/postfix
