@@ -14,3 +14,7 @@ echo /usr/lib/xorg/modules/extensions/libwfb.so
 echo /usr/lib32/libGL.la
 echo /usr/lib32/libGL.so
 echo /usr/lib32/libGLcore.so
+#
+# generated files
+echo /etc/X11/xorg.conf.d/20opengl.conf
+echo /etc/env.d/000opengl
