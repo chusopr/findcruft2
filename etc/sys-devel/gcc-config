@@ -1,7 +1,7 @@
 if [[ ${PV%.*} == "1.3" ]]; then
 	echo "/etc/env.d/05gcc"
 else
-	cruftfile "/etc/env.d/05gcc-.*-.*-.*-.*"
+	cruftfile "/etc/env.d/04gcc-.*-.*-.*-.*"
 fi
 #
 cruftdir /etc/env.d/gcc/
@@ -82,9 +82,9 @@ cruftfile "/usr/bin/.*-.*-.*-.*-rebuild-gcj-db"
 cruftfile "/usr/share/gcc-data/.*-.*-.*-.*/.*/info"
 cruftfile "/usr/share/gcc-data/.*-.*-.*-.*/.*/info/dir"
 #
-echo /lib/libgcc_s.so.1
-echo /lib32/libgcc_s.so.1
+cruftfile "/lib/libgcc_s\.so\.1"
 #
 cruftfile "/usr/lib/pkgconfig/libgcj\.pc"
 cruftfile "/usr/lib/pkgconfig/libgcj-.*\.pc"
 #
+cruftfile "/etc/ld\.so\.conf\.d/05gcc-.*-pc-linux-gnu\.conf"
