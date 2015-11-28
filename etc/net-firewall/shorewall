@@ -14,3 +14,20 @@ echo /var/lib/shorewall/state
 echo /var/lib/shorewall/zones
 #
 echo /var/log/shorewall-init.log
+#
+#
+echo /var/lib/shorewall6/.ip6tables-restore-input
+echo /var/lib/shorewall6/.modules
+echo /var/lib/shorewall6/.modulesdir
+echo /var/lib/shorewall6/.restart
+echo /var/lib/shorewall6/firewall
+echo /var/lib/shorewall6/marks
+echo /var/lib/shorewall6/nat
+echo /var/lib/shorewall6/policies
+echo /var/lib/shorewall6/proxyndp
+echo /var/lib/shorewall6/restarted
+echo /var/lib/shorewall6/state
+echo /var/lib/shorewall6/zones
+#
+echo /var/log/shorewall6-init.log
+#
