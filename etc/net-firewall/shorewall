@@ -16,10 +16,12 @@ echo /var/lib/shorewall/zones
 echo /var/log/shorewall-init.log
 #
 #
+echo /var/lib/shorewall6/.dynamic
 echo /var/lib/shorewall6/.ip6tables-restore-input
 echo /var/lib/shorewall6/.modules
 echo /var/lib/shorewall6/.modulesdir
 echo /var/lib/shorewall6/.restart
+echo /var/lib/shorewall6/.start
 echo /var/lib/shorewall6/firewall
 echo /var/lib/shorewall6/marks
 echo /var/lib/shorewall6/nat
