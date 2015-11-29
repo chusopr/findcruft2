@@ -5,7 +5,7 @@ echo /usr/share/mime/globs
 echo /usr/share/mime/magic
 echo /usr/share/mime/mime.cache
 echo /usr/share/mime/subclasses
-
+#
 echo /usr/share/mime/application
 echo /usr/share/mime/audio
 echo /usr/share/mime/image
@@ -16,14 +16,15 @@ echo /usr/share/mime/multipart
 echo /usr/share/mime/text
 echo /usr/share/mime/video
 echo /usr/share/mime/x-epoc
-
+#
+# since 03/2014 files are created only with lower case chars....
 for package in /usr/share/mime/packages/*.xml; do
 	[[ -f ${package} ]] \
 	&& sed "s!.*<mime-type[[:space:]]\+type=\"\([^\"]*\)\">.*!/usr/share/mime/\1.xml!
 	s!.*<mime-type[[:space:]]\+type='\([^']*\)'>.*!/usr/share/mime/\1.xml!
-	t;d" ${package}
+	t;d" ${package} | tr '[:upper:]' '[:lower:]'
 done
-
+#
 #
 echo /usr/share/mime/application/x-turtle.xml
 #
